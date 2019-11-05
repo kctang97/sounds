@@ -26,7 +26,8 @@ function draw() {
 
   osc.freq(map(mouseX, 0, width, 30, 1000) + pN);
 
-  osc.amp(map(mouseY, 0, height, 0.3, 0));
+  osc.amp(map(sin(frameCount / 10.5), -1.5, 1, 0.1, 1));
+  // osc.amp(map(mouseY, 0, height, 0.3, 0));
   // text("click to play", width / 2, height / 2);
 }
 
