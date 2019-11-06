@@ -22,16 +22,22 @@ function setup() {
 }
 
 function draw() {
-  pN = noise(frameCount / 10) * 150;
+  if (mouseIsPressed) {
+    strokeWeight(random(10));
+    stroke(random(200, 255),random(200, 255),random(200, 255));
+    line(mouseX, mouseY, pmouseX, pmouseY, 10);
+  }
+
+  pN = noise(frameCount / 20) * 150;
 
   osc.freq(map(mouseX, 0, width, 30, 1000) + pN);
 
   osc.amp(map(sin(frameCount / 10.5), -1.5, 1, 0.1, 1));
-  // osc.amp(map(mouseY, 0, height, 0.3, 0));
-  // text("click to play", width / 2, height / 2);
+
 }
 
 function mousePressed() {
+
   osc.start();
 }
 
