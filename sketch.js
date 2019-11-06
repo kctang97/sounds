@@ -6,7 +6,7 @@ let pN;
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-  background(100, 150, 255);
+
   osc = new p5.Oscillator("square");
 
   // osc.setType("");
@@ -22,6 +22,7 @@ function setup() {
 }
 
 function draw() {
+    background(100, 150, 255, 20);
   if (mouseIsPressed) {
     strokeWeight(random(10));
     stroke(random(200, 255),random(200, 255),random(200, 255));
